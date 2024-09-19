@@ -1,0 +1,35 @@
+package com.example.service;
+
+import org.springframework.stereotype.Service;
+
+import com.example.controller.dto.ReceptionDto;
+import com.example.controller.dto.ReceptionResponse;
+import com.example.repository.TransactionRepository;
+
+@Service
+public class ReceptionService {
+
+    private final AuthorizationService authorizationService;
+    private final InputValidationService inputValidationService;
+    private final TransactionRepository transactionRepository;
+
+    public ReceptionService(
+        AuthorizationService authorizationService,
+        InputValidationService inputValidationService,
+        TransactionRepository transactionRepository
+    ) {
+        this.authorizationService = authorizationService;
+        this.inputValidationService = inputValidationService;
+        this.transactionRepository = transactionRepository;
+    }
+
+    public ReceptionResponse handleReceivedData(ReceptionDto data) {
+        authorizationService.controlUserAccessToOrganisation(data.getSubmitterId(), data.getOrganisationNumber());
+
+        inputValidationService.validateOrThrowError(data);
+
+        transactionRepository.storeReceivedData(data);
+
+        return new ReceptionResponse(data.getOrganisationNumber());
+    }
+}
