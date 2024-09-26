@@ -5,8 +5,8 @@ CREATE TABLE transactions (
                               category VARCHAR(50) NOT NULL,
                               taxation_year INTEGER NOT NULL,
                               taxation_period_type VARCHAR(50) NOT NULL,
-                              time_of_submission TIMESTAMP WITH TIME ZONE NOT NULL,
-                              created TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+                              time_of_submission TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+                              created TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
                               status VARCHAR(50) NOT NULL,
                               vat_lines JSONB NOT NULL
 );

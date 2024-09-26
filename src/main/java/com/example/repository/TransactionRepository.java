@@ -66,7 +66,7 @@ public class TransactionRepository {
                 + ":CATEGORY, "
                 + ":TAXATION_YEAR, "
                 + ":TAXATION_PERIOD_TYPE, "
-                + ":TIME_OF_SUBMISSION, "
+                + ":TIME_OF_SUBMISSION::timestamp, "
                 + ":STATUS, "
                 + ":VAT_LINES::jsonb"
                 + ")";
