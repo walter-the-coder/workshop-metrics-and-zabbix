@@ -1,13 +1,12 @@
-CREATE TABLE TRANSACTIONS
-(
-    TRANSACTIONS_ID      NUMBER AUTO_INCREMENT       NOT NULL,
-    ORGANISATION_NUMBER  VARCHAR2(50)                NOT NULL,
-    SUBMITTER_TIN        VARCHAR2(50)                NOT NULL,
-    CATEGORY             VARCHAR2(50)                NOT NULL,
-    TAXATION_YEAR        NUMBER(4)                   NOT NULL,
-    TAXATION_PERIOD_TYPE VARCHAR2(50)                NOT NULL,
-    TIME_OF_SUBMISSION   TIMESTAMP(6) WITH TIME ZONE NOT NULL,
-    CREATED              TIMESTAMP(6) WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    STATUS               VARCHAR2(50)                NOT NULL,
-    VAT_LINES            JSON                        NOT NULL
+CREATE TABLE transactions (
+                              transactions_id SERIAL PRIMARY KEY,
+                              organisation_number VARCHAR(50) NOT NULL,
+                              submitter_tin VARCHAR(50) NOT NULL,
+                              category VARCHAR(50) NOT NULL,
+                              taxation_year INTEGER NOT NULL,
+                              taxation_period_type VARCHAR(50) NOT NULL,
+                              time_of_submission TIMESTAMP WITH TIME ZONE NOT NULL,
+                              created TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+                              status VARCHAR(50) NOT NULL,
+                              vat_lines JSONB NOT NULL
 );

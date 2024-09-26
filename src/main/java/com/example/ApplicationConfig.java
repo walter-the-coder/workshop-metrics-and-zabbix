@@ -48,7 +48,9 @@ public class ApplicationConfig {
                 .setType(H2)
                 .build();
         } else {
-            return DataSourceBuilder.create().type(HikariDataSource.class).build();
+            return DataSourceBuilder.create()
+                    .type(HikariDataSource.class)
+                    .build();
         }
     }
 
