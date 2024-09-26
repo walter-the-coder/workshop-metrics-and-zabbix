@@ -2,11 +2,10 @@
 spring:
     datasource:
         main:
-            driver-class-name: org.postgresql.Driver
+            embedded: false
             jdbcUrl: jdbc:postgresql://localhost:5432/postgresql?user=postgres&password=postgresql
             username: postgres
             password: postgresql
-            embedded: false
         login:
             driver-class-name: org.h2.Driver
             embedded: true

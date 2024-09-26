@@ -22,9 +22,7 @@ spring:
         active: local
     datasource:
         main:
-            driver-class-name: oracle.jdbc.OracleDriver
-            pool-size: 5
-
+            driver-class-name: org.postgresql.Driver
         login:
             driver-class-name: oracle.jdbc.OracleDriver
     flyway:
