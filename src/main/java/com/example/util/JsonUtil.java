@@ -26,8 +26,7 @@ public class JsonUtil {
 
     public static <T> T readJson(ObjectMapper objectMapper, String jsonString, Class<T> clazz) {
         try {
-            JsonNode jsonNode = objectMapper.readTree(jsonString);
-            return objectMapper.readValue(jsonNode.asText(), clazz);
+            return objectMapper.readValue(jsonString, clazz);
         } catch (IOException e) {
             throw new CustomRuntimeException(
                 "JSON_READ_ERROR",
