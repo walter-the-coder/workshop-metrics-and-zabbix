@@ -68,7 +68,7 @@ public class TransactionRepository {
                 + ":TAXATION_PERIOD_TYPE, "
                 + ":TIME_OF_SUBMISSION, "
                 + ":STATUS, "
-                + ":VAT_LINES"
+                + ":VAT_LINES::jsonb"
                 + ")";
 
         jdbcTemplate.update(sql, paramSource);
