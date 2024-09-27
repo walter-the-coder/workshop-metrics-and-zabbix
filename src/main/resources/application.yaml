@@ -14,7 +14,7 @@ management:
 
 logging:
     file:
-        name: log.txt
+        name: system.log
         path: /
 
 spring:
