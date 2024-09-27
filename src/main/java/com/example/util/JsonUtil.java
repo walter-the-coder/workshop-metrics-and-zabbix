@@ -1,12 +1,11 @@
 package com.example.util;
 
-import java.io.IOException;
-import java.sql.SQLException;
-
 import com.example.exceptionHandling.CustomRuntimeException;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.postgresql.util.PGobject;
+
+import java.io.IOException;
+import java.sql.SQLException;
 
 public class JsonUtil {
     public static PGobject writeAsJsonString(ObjectMapper objectMapper, Object object) {
@@ -18,8 +17,8 @@ public class JsonUtil {
             return jsonbObject;
         } catch (IOException | SQLException e) {
             throw new CustomRuntimeException(
-                "JSON_WRITING_ERROR",
-                "Failed to write object to JSON string"
+                    "JSON_WRITING_ERROR",
+                    "Failed to write object to JSON string"
             );
         }
     }
@@ -29,8 +28,8 @@ public class JsonUtil {
             return objectMapper.readValue(jsonString, clazz);
         } catch (IOException e) {
             throw new CustomRuntimeException(
-                "JSON_READ_ERROR",
-                "Failed to read JSON"
+                    "JSON_READ_ERROR",
+                    "Failed to read JSON"
             );
         }
     }

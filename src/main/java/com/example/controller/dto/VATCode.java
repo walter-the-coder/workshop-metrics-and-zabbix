@@ -1,9 +1,9 @@
 package com.example.controller.dto;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.Arrays;
 import java.util.Objects;
-
-import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum VATCode {
     VAT_CODE_1(1),

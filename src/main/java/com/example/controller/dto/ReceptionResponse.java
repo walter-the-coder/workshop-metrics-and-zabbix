@@ -1,10 +1,10 @@
 package com.example.controller.dto;
 
-import java.util.Objects;
-
 import com.example.type.OrganisationNumber;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+
+import java.util.Objects;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -17,7 +17,7 @@ public class ReceptionResponse {
 
     public ReceptionResponse(OrganisationNumber organisationNumber) {
         message =
-            "The data for organisation number " + organisationNumber.toString() + " was submitted successfully.";
+                "The data for organisation number " + organisationNumber.toString() + " was submitted successfully.";
     }
 
     public ReceptionResponse(String message) {
@@ -52,7 +52,7 @@ public class ReceptionResponse {
     @Override
     public String toString() {
         return "ReceptionResponse{" +
-            "message='" + message + '\'' +
-            '}';
+                "message='" + message + '\'' +
+                '}';
     }
 }

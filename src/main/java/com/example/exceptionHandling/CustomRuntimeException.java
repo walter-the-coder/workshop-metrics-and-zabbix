@@ -9,10 +9,10 @@ public class CustomRuntimeException extends RuntimeException {
     private final HttpStatus httpStatus;
 
     public CustomRuntimeException(
-        String errorCode,
-        String errorMessage,
-        Throwable cause,
-        HttpStatus httpStatus
+            String errorCode,
+            String errorMessage,
+            Throwable cause,
+            HttpStatus httpStatus
     ) {
         super(errorMessage, cause);
         this.errorCode = errorCode;
@@ -22,8 +22,8 @@ public class CustomRuntimeException extends RuntimeException {
     }
 
     public CustomRuntimeException(
-        String errorCode,
-        String errorMessage
+            String errorCode,
+            String errorMessage
     ) {
         super(errorMessage, null);
         this.errorCode = errorCode;
@@ -33,9 +33,9 @@ public class CustomRuntimeException extends RuntimeException {
     }
 
     public CustomRuntimeException(
-        String errorCode,
-        String errorMessage,
-        HttpStatus httpStatus
+            String errorCode,
+            String errorMessage,
+            HttpStatus httpStatus
     ) {
         super(errorMessage, null);
         this.errorCode = errorCode;

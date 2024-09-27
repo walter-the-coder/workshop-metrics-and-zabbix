@@ -1,14 +1,14 @@
 package com.example.controller.dto;
 
-import java.time.LocalDateTime;
-import java.util.Objects;
-
 import com.example.type.OrganisationNumber;
 import com.example.type.TaxCategory;
 import com.example.type.TaxationPeriodType;
 import com.example.type.TaxpayerIdentificationNumber;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+
+import java.time.LocalDateTime;
+import java.util.Objects;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -87,28 +87,28 @@ public class ReceptionDto {
         }
         ReceptionDto that = (ReceptionDto) object;
         return Objects.equals(organisationNumber, that.organisationNumber) && Objects.equals(
-            submitterId, that.submitterId) && category == that.category && Objects.equals(year, that.year)
-            && taxationPeriodType == that.taxationPeriodType && Objects.equals(timeOfSubmission,
-            that.timeOfSubmission) && Objects.equals(vatLines, that.vatLines);
+                submitterId, that.submitterId) && category == that.category && Objects.equals(year, that.year)
+                && taxationPeriodType == that.taxationPeriodType && Objects.equals(timeOfSubmission,
+                that.timeOfSubmission) && Objects.equals(vatLines, that.vatLines);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(organisationNumber, submitterId, category, year, taxationPeriodType, timeOfSubmission,
-            vatLines);
+                vatLines);
     }
 
     @Override
     public String toString() {
         return "ReceptionDto{" +
-            "organisationNumber=" + organisationNumber +
-            ", submitterId=" + submitterId +
-            ", category=" + category +
-            ", year=" + year +
-            ", taxationPeriodType=" + taxationPeriodType +
-            ", timeOfSubmission=" + timeOfSubmission +
-            ", vatLines=" + vatLines +
-            '}';
+                "organisationNumber=" + organisationNumber +
+                ", submitterId=" + submitterId +
+                ", category=" + category +
+                ", year=" + year +
+                ", taxationPeriodType=" + taxationPeriodType +
+                ", timeOfSubmission=" + timeOfSubmission +
+                ", vatLines=" + vatLines +
+                '}';
     }
 
     public static ReceptionDto.Builder with() {
