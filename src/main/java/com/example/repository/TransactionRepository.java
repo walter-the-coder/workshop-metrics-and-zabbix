@@ -21,6 +21,7 @@ import java.util.Map;
 import static com.example.util.JsonUtil.readJson;
 import static com.example.util.JsonUtil.writeAsJsonString;
 
+@Timed("repository")
 @Repository
 public class TransactionRepository {
     private final NamedParameterJdbcTemplate jdbcTemplate;
@@ -34,10 +35,6 @@ public class TransactionRepository {
         this.objectMapper = objectMapper;
     }
 
-    @Timed(
-            value = "TransactionRepository",
-            extraTags = {"repository", "storeReceivedData"}
-    )
     public void storeReceivedData(ReceptionDto data) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("ORGANISATION_NUMBER", data.getOrganisationNumber().toString());
@@ -74,10 +71,6 @@ public class TransactionRepository {
         jdbcTemplate.update(sql, paramSource);
     }
 
-    @Timed(
-            value = "TransactionRepository",
-            extraTags = {"repository", "getUnprocessedData"}
-    )
     public List<ReceptionDto> getUnprocessedData() {
         Map<String, String> values = new HashMap<>();
         values.put("STATUS", ReceptionStatus.RECEIVED.name());
