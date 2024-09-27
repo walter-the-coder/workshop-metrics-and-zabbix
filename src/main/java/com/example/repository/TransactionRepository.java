@@ -80,7 +80,7 @@ public class TransactionRepository {
         );
     }
 
-    public ReceptionDto mapRow(ResultSet rs, int rowNum) {
+    private ReceptionDto mapRow(ResultSet rs, int rowNum) {
         try {
             return ReceptionDto.with()
                     .withOrganisationNumber(new OrganisationNumber(rs.getString("ORGANISATION_NUMBER")))
