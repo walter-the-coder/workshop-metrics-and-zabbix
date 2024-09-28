@@ -14,8 +14,7 @@ management:
 
 logging:
     file:
-        name: system.log
-        path: /
+        name: syslog.log
 
 spring:
     profiles:
