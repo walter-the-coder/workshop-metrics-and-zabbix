@@ -5,6 +5,7 @@ import com.example.controller.dto.VATLines;
 import com.example.exceptionHandling.CustomRuntimeException;
 import com.example.type.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.micrometer.core.annotation.Timed;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -20,6 +21,7 @@ import java.util.Map;
 import static com.example.util.JsonUtil.readJson;
 import static com.example.util.JsonUtil.writeAsJsonString;
 
+@Timed("repository")
 @Repository
 public class TransactionRepository {
     private final NamedParameterJdbcTemplate jdbcTemplate;
