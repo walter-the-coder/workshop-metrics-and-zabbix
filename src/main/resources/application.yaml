@@ -10,7 +10,7 @@ management:
         env.show-values: ALWAYS
         configprops.show-values: ALWAYS
     info.env.enabled: true
-    endpoints.web.exposure.include: "metrics,health,logfile"
+    endpoints.web.exposure.include: "metrics,health"
 
 logging:
     file:
