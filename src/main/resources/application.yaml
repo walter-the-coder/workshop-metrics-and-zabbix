@@ -12,10 +12,6 @@ management:
     info.env.enabled: true
     endpoints.web.exposure.include: "metrics,health"
 
-logging:
-    file:
-        name: syslog.log
-
 spring:
     profiles:
         active: local
