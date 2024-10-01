@@ -44,8 +44,8 @@ public class VATLines {
     @Override
     public String toString() {
         return "VATLines{" +
-            "vatLines=" + vatLines +
-            '}';
+                "vatLines=" + vatLines +
+                '}';
     }
 
     public static VATLines.Builder with() {

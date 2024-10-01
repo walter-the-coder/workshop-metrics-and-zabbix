@@ -52,9 +52,9 @@ public class VATLine {
     @Override
     public String toString() {
         return "VATLine{" +
-            "vatCode=" + vatCode +
-            ", amount=" + amount +
-            '}';
+                "vatCode=" + vatCode +
+                ", amount=" + amount +
+                '}';
     }
 
     public static VATLine.Builder with() {

@@ -20,8 +20,8 @@ public class ReceptionController {
     private final InputValidationService inputValidationService;
 
     public ReceptionController(
-        ReceptionService receptionService,
-        InputValidationService inputValidationService
+            ReceptionService receptionService,
+            InputValidationService inputValidationService
     ) {
         this.receptionService = receptionService;
         this.inputValidationService = inputValidationService;
@@ -29,7 +29,7 @@ public class ReceptionController {
 
     @PostMapping(value = "/validate", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ValidationResponse> validate(
-        @RequestBody ReceptionDto data
+            @RequestBody ReceptionDto data
     ) {
         ValidationResponse response = inputValidationService.validate(data);
 
@@ -38,7 +38,7 @@ public class ReceptionController {
 
     @PostMapping(value = "/submit", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ReceptionResponse> handleData(
-        @RequestBody ReceptionDto data
+            @RequestBody ReceptionDto data
     ) {
         ReceptionResponse response = receptionService.handleReceivedData(data);
         return ResponseEntity.ok(response);

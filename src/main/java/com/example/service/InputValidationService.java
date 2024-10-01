@@ -32,13 +32,13 @@ public class InputValidationService {
 
         if (!validationResponse.getValidationErrors().isEmpty()) {
             String errorMessage = StringUtils.joinWith(":", validationResponse.getValidationErrors().values())
-                .replace("[", "")
-                .replace("]", "");
+                    .replace("[", "")
+                    .replace("]", "");
 
             throw new CustomRuntimeException(
-                "BAD_REQUEST",
-                errorMessage,
-                HttpStatus.BAD_REQUEST
+                    "BAD_REQUEST",
+                    errorMessage,
+                    HttpStatus.BAD_REQUEST
             );
         }
     }
@@ -46,7 +46,7 @@ public class InputValidationService {
     public void validateYear(Integer year, Map<String, String> validationErrors) {
         if (year == null || year != 2024) {
             validationErrors.put("year", "Invalid year: " + year + ". "
-                + "We only allow submissions for year 2024 at the moment");
+                    + "We only allow submissions for year 2024 at the moment");
         }
     }
 
