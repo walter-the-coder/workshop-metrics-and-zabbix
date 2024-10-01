@@ -74,6 +74,9 @@ public class TransactionRepository {
     public List<ReceptionDto> getUnprocessedData() {
         Map<String, String> values = new HashMap<>();
         values.put("STATUS", ReceptionStatus.RECEIVED.name());
+        if (true) {
+            throw new RuntimeException("ERROR!");
+        }
 
         return jdbcTemplate.query(
                 "SELECT * FROM TRANSACTIONS WHERE STATUS = :STATUS",

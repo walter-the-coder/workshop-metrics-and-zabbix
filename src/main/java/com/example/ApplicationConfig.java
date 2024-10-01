@@ -21,6 +21,8 @@ import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Primary;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.sql.DataSource;
 
@@ -28,7 +30,14 @@ import static org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType.
 
 @Configuration
 @Import(CustomWebExceptionHandler.class)
-public class ApplicationConfig {
+public class ApplicationConfig implements WebMvcConfigurer {
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new MdcInterceptor())
+                .excludePathPatterns("/docs/**", "/v3/**", "/actuator/**");
+        WebMvcConfigurer.super.addInterceptors(registry);
+    }
 
     @Primary
     @Bean("mainDatasource")
