@@ -47,7 +47,7 @@ public class RetrievingDto {
     @Override
     public String toString() {
         return "RetrievingDto{" +
-            "data=" + data +
-            '}';
+                "data=" + data +
+                '}';
     }
 }

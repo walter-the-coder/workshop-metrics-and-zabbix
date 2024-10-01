@@ -51,12 +51,12 @@ public class InputValidationService {
     }
 
     public void validateTaxationPeriodType(
-        TaxationPeriodType taxationPeriodType,
-        Map<String, String> validationErrors
+            TaxationPeriodType taxationPeriodType,
+            Map<String, String> validationErrors
     ) {
         if (taxationPeriodType != TaxationPeriodType.JAN_FEB) {
             validationErrors.put("taxationPeriodType", "Invalid taxation period type: " + taxationPeriodType
-                + ". We only allow submissions of the taxation period january-february at the moment.");
+                    + ". We only allow submissions of the taxation period january-february at the moment.");
         }
     }
 
@@ -84,20 +84,20 @@ public class InputValidationService {
         if (allowedPositiveCodes.contains(vatLine.getVatCode())) {
             if (vatLine.getAmount() > 0) {
                 validationErrors.put("vatLine",
-                    "Invalid VAT amount for VAT code " + vatLine.getVatCode()
-                        + ". The amount should be zero or negative!");
+                        "Invalid VAT amount for VAT code " + vatLine.getVatCode()
+                                + ". The amount should be zero or negative!");
             }
         } else if (allowedNegativeCodes.contains(vatLine.getVatCode())) {
             if (vatLine.getAmount() < 0) {
                 validationErrors.put("vatLine",
-                    "Invalid VAT amount for VAT code " + vatLine.getVatCode()
-                        + ". The amount should be zero or positive!");
+                        "Invalid VAT amount for VAT code " + vatLine.getVatCode()
+                                + ". The amount should be zero or positive!");
             }
         } else {
             throw new CustomRuntimeException(
-                "INVALID_VAT_VODE",
-                "Invalid VAT code " + vatLine.getVatCode(),
-                HttpStatus.BAD_REQUEST
+                    "INVALID_VAT_VODE",
+                    "Invalid VAT code " + vatLine.getVatCode(),
+                    HttpStatus.BAD_REQUEST
             );
         }
     }

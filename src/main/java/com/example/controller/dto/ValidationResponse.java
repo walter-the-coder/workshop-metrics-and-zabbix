@@ -52,7 +52,7 @@ public class ValidationResponse {
     @Override
     public String toString() {
         return "ValidationResponse{" +
-            "validationErrors=" + validationErrors +
-            '}';
+                "validationErrors=" + validationErrors +
+                '}';
     }
 }

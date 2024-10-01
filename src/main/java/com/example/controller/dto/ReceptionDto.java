@@ -87,28 +87,28 @@ public class ReceptionDto {
         }
         ReceptionDto that = (ReceptionDto) object;
         return Objects.equals(organisationNumber, that.organisationNumber) && Objects.equals(
-            submitterId, that.submitterId) && category == that.category && Objects.equals(year, that.year)
-            && taxationPeriodType == that.taxationPeriodType && Objects.equals(timeOfSubmission,
-            that.timeOfSubmission) && Objects.equals(vatLines, that.vatLines);
+                submitterId, that.submitterId) && category == that.category && Objects.equals(year, that.year)
+                && taxationPeriodType == that.taxationPeriodType && Objects.equals(timeOfSubmission,
+                that.timeOfSubmission) && Objects.equals(vatLines, that.vatLines);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(organisationNumber, submitterId, category, year, taxationPeriodType, timeOfSubmission,
-            vatLines);
+                vatLines);
     }
 
     @Override
     public String toString() {
         return "ReceptionDto{" +
-            "organisationNumber=" + organisationNumber +
-            ", submitterId=" + submitterId +
-            ", category=" + category +
-            ", year=" + year +
-            ", taxationPeriodType=" + taxationPeriodType +
-            ", timeOfSubmission=" + timeOfSubmission +
-            ", vatLines=" + vatLines +
-            '}';
+                "organisationNumber=" + organisationNumber +
+                ", submitterId=" + submitterId +
+                ", category=" + category +
+                ", year=" + year +
+                ", taxationPeriodType=" + taxationPeriodType +
+                ", timeOfSubmission=" + timeOfSubmission +
+                ", vatLines=" + vatLines +
+                '}';
     }
 
     public static ReceptionDto.Builder with() {
