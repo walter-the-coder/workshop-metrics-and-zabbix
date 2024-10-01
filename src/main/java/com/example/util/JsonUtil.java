@@ -7,6 +7,8 @@ import org.postgresql.util.PGobject;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import java.io.IOException;
+
 public class JsonUtil {
     public static PGobject writeAsJsonString(ObjectMapper objectMapper, Object object) {
         try {
