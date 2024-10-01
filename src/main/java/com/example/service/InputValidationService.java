@@ -1,21 +1,16 @@
 package com.example.service;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
+import com.example.controller.dto.*;
+import com.example.exceptionHandling.CustomRuntimeException;
+import com.example.type.TaxationPeriodType;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import com.example.controller.dto.ReceptionDto;
-import com.example.controller.dto.VATCode;
-import com.example.controller.dto.VATLine;
-import com.example.controller.dto.VATLines;
-import com.example.controller.dto.ValidationResponse;
-import com.example.exceptionHandling.CustomRuntimeException;
-import com.example.type.TaxationPeriodType;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 @Service
 public class InputValidationService {

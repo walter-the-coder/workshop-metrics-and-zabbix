@@ -1,14 +1,14 @@
 package com.example.controller.dto;
 
-import java.time.LocalDateTime;
-import java.util.Objects;
-
 import com.example.type.OrganisationNumber;
 import com.example.type.TaxCategory;
 import com.example.type.TaxationPeriodType;
 import com.example.type.TaxpayerIdentificationNumber;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+
+import java.time.LocalDateTime;
+import java.util.Objects;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)

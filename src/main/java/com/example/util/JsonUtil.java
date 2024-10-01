@@ -1,10 +1,10 @@
 package com.example.util;
 
-import java.io.IOException;
-
 import com.example.exceptionHandling.CustomRuntimeException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
 
 public class JsonUtil {
     public static String writeAsJsonString(ObjectMapper objectMapper, Object object) {
